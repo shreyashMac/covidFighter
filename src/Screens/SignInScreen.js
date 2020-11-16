@@ -1,12 +1,19 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AuthForm from "../Components/AuthForm";
 
-const SignInScreen = () => {
+const SignInScreen = ({ navigation }) => {
+  const signIn = () => {
+    navigation.navigate("SignUp");
+  };
   return (
     <View style={styles.container}>
-      <AuthForm />
+      <AuthForm
+        formName="SIGN IN"
+        actionName="Sign In"
+        formMessage="Don't have an account? Create Here !!"
+        formAction={signIn}
+      />
     </View>
   );
 };
